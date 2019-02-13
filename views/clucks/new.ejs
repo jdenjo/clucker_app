@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<% if (loggedInUserName) { %>
+
+<div class="card mb-4">
+    <div class="newCluck">
+        <form method="POST" action="/new">
+            <div class="form-group">
+            Content
+                <textarea 
+                    class="form-control"
+                    name="content" 
+                    placeholder="Whatchoo cluckin' 'bout?"
+                    rows="4"
+                ></textarea>
+            </div>
+            <div class="form-group">
+            Image URL
+                <input 
+                    name="image_url" 
+                    class="form-control" 
+                    placeholder="https://i.imgur.com/qM6KaEy.gif"
+                >
+            </div>
+            <input type="hidden" name="username" value="<%= loggedInUserName %>">
+            <input type="submit" class="btn btn-md btn-outline-secondary" style="float: right;" value="Cluck!">
+        </form>
+        </div>
+    </div>
+<%} else { %>
+
+<div class="card mb-4">
+    <div class="signIn">
+        <p>You are currently not signed in.<p>
+        <p> Please sign in  <a href="/sign_in"> here </a>first before Clucking!</p>
+    </div>
+</div>
+
+<% } %>
+
+<%- include('../partials/footer') %>

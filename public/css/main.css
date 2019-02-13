@@ -1,0 +1,53 @@
+.welcome-image {
+	border-radius: 10px;
+	max-height: 300px;
+}
+.mainBody{
+	margin: auto;
+	width: 800px;
+	color: grey;
+}
+.signIn{
+	padding: 20px;
+	text-align: left;
+	justify-content: left;
+	color: gray;
+}
+
+.newCluck{
+	padding: 50px;
+}
+
+.cardUser{
+	font-weight: bold;
+}
+.col-fixed-150{
+	width:150;
+	background:red;
+	position:fixed;
+	height:100%;
+	z-index:1;
+}
+.box-header {
+	padding-bottom: 5px;
+	display: table;
+	width: 100%;
+}
+.left-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.right-cell {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+}
+.form-control::-moz-placeholder {
+	color: lightgray;
+}
+.form-control:-ms-input-placeholder {
+	color: lightgray;
+}
+.form-control::-webkit-input-placeholder {
+	color: lightgray;
+}
