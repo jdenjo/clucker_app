@@ -1,0 +1,64 @@
+<%- include("../partials/header") %>
+
+<div class="post-cards">
+    <% for (let cluck of clucks) { %>
+        <div class="card mb-4"">
+
+            <div class="card-body">
+
+            <div class="container">
+                <div class="row">
+
+            
+                <div class="col-2" style="text-align:right">
+                    <img  width="100" src="https://lh3.googleusercontent.com/Wo6QRH7CmpOKZ2Hkk6CuiitI9GNWqb0-GWcfTWZ0qGg4bV6omhbRkWd_QqCd0Y0IT9nS=w144-h144-n-rw">
+                </div>           
+                
+                <div class="col">
+                    <p class="card-text cardUser"> <%= cluck.username %> • <%= timeSince(cluck.updated_at) %> </p>
+                    <p class="card-text"><%= cluck.content %></p>
+                    <img width="550" src="<%= cluck.image_url %>">            
+                </div>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+
+    <% } %>
+</div>
+<%- include("../partials/footer") %>
+
+<%
+
+//  this is a function that makes the date human readable
+// it is the bonus part of the quiz
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return interval + " years ago";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months ago";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days ago";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours ago";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes ago";
+  }
+  return " Just now";
+}
+%>
